@@ -1,0 +1,4 @@
+export const AuthActionTypes = {
+    SIGNIN_USER_SUCCESS : 'SIGNIN_USER_SUCCESS',
+    SIGNOUT_USER_SUCCESS : 'SIGNOUT_USER_SUCCESS'
+}
