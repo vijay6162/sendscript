@@ -2,10 +2,7 @@
   "name": "sendscript",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "16.x",
-    "npm": "8.5.5"
-  },
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
