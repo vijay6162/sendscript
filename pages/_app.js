@@ -15,8 +15,11 @@ function MyApp({ Component, pageProps }) {
         setshowMobileWarning(false);
       }
     }
-    window.addEventListener("resize", checkLayout);
-    checkLayout();
+    window.addEventListener("resize", checkLayout); 
+    if(typeof window !== "undefined"){
+      checkLayout();
+    }
+    
     return () => window.removeEventListener("resize", checkLayout);
   }, []);
 

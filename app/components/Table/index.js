@@ -20,11 +20,9 @@ import { Badge } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import AppConst from "../../../app/constants/AppConstants";
 import { FaFilter, FaTrash } from "react-icons/fa";
-import "next-pagination/dist/index.css";
 import SquareButton from "../SquareButton";
 import { AddIcon } from "@chakra-ui/icons";
 
-// import Pagination from 'next-pagination';
 
 const CustomTable = (props) => {
 
@@ -154,6 +152,7 @@ const CustomTable = (props) => {
                       color="#C7C7C7"
                       fontSize={13}
                       marginBottom={2}
+                      zIndex={999}
                     />
                   }
                 />

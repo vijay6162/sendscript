@@ -8,13 +8,16 @@ import {
   Center,
   Checkbox,
   CheckboxGroup,
+  Button
 } from "@chakra-ui/react";
 import TextInput from "../../../../app/components/TextInput";
 import AppConst from "../../../../app/constants/AppConstants";
 import CustomTextArea from "../../../../app/components/TextArea";
-const addPrescriptionItem = () => {
+const addPrescriptionItem = (props) => {
   return (
-    <Box marginLeft={10} marginRight={10}>
+    <>
+
+<Box marginLeft={10} marginRight={10}>
       <SimpleGrid columns={2} spacing={10}>
         <TextInput
           htmlFor="drugToPrescribe"
@@ -89,7 +92,52 @@ const addPrescriptionItem = () => {
           label={"Comments For Pharmacy"}
         />
       </SimpleGrid>
+      
     </Box>
+    
+
+    <Box
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={'flex-end'}
+          marginTop={5}
+          marginBottom={5}
+        >
+          <Button
+            variant={"outline"}
+            mr={3}
+            onClick={props.closeNewPresciptionModal}
+            borderColor="#50A2DB"
+            borderRadius={5}
+          >
+            <Text
+              fontFamily={"Poppins"}
+              fontSize={13}
+              fontWeight={"normal"}
+              color="#50A2DB"
+            >
+              Cancel
+            </Text>
+          </Button>
+          <Button
+            backgroundColor="#50A2DB"
+            mr={3}
+            onClick={props.closeNewPresciptionModal}
+            borderRadius={5}
+          >
+            <Text
+              fontFamily={"Poppins"}
+              fontSize={13}
+              color="#fff"
+              fontWeight={"normal"}
+            >
+              &nbsp;Save&nbsp;
+            </Text>
+          </Button>
+        </Box>
+    
+    </>
+   
   );
 };
 

@@ -1,71 +1,53 @@
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button,
-  Text
+  Box
 } from "@chakra-ui/react";
+import Modal from 'react-modal';
+
+
+
 import AppConst from "../../constants/AppConstants";
 const commonModal = (props) => {
-  const { isOpen, onOpen, onClose } = props;
+  const { isOpen, onOpen, onClose,width,height,top } = props;
   return (
-    <>
-      <Modal isOpen={isOpen} onClose={onClose} size={"5xl"}>
-        <ModalOverlay />
-        <ModalContent borderRadius={25}>
-          <ModalHeader  paddingBottom={0}>
-            <Text
-              fontFamily={"Poppins"}
-              fontWeight="semibold"
-              fontSize={"23px"}
-             
-            >
-              {AppConst.AddItem}
-            </Text>
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>{props.children}</ModalBody>
-          <ModalFooter>
-            <Button
-              variant={"outline"}
-              mr={3}
-              onClick={onClose}
-              borderColor="#50A2DB"
-              borderRadius={5}
-            >
-              <Text
-                fontFamily={"Poppins"}
-                fontSize={13}
-                fontWeight={"normal"}
-                color="#50A2DB"
-              >
-                Cancel
-              </Text>
-            </Button>
-            <Button
-              backgroundColor="#50A2DB"
-              mr={3}
-              onClick={onClose}
-              borderRadius={5}
-            >
-              <Text
-                fontFamily={"Poppins"}
-                fontSize={13}
-                color="#fff"
-                fontWeight={"normal"}
-              >
-                &nbsp;Save&nbsp;
-              </Text>
-            </Button>
-          </ModalFooter>
-        </ModalContent>
+    <Box>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onClose}
+        style={{
+          overlay: {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(125, 124, 125, 0.7)',
+            zIndex : 999999
+          },
+          content: {
+            position:'absolute',
+            top : top,
+            left:0,
+            right:0,
+            marginLeft:'auto',
+            marginRight:'auto',
+            backgroundColor: '#fff',
+            overflow: 'hidden',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '30px',
+             padding: '20px',
+            width :width,
+            height : height
+            
+          }
+        }}
+        contentLabel="Example Modal"
+      >
+
+      {props.children}
       </Modal>
-    </>
+    </Box>
   );
 };
+
 
 export default commonModal;

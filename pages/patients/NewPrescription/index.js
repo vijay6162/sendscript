@@ -8,7 +8,7 @@ import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import PatientProfileCard from "../PatientProfile/PatientProfileCard";
 import { useRouter } from "next/router";
 import CustomTable from "../../../app/components/Table";
-import { FaPhone, FaClock, FaMapMarker } from "react-icons/fa";
+import { FaPhone, FaClock, FaMapMarker, FaTimes } from "react-icons/fa";
 import CustomModal from "../../../app/components/Modal";
 import AddPrescriptionItem from "./AddPrescriptionItem";
 const tableHeadData = [
@@ -89,10 +89,10 @@ const NewPrescription = () => {
 
   const handleSearchPharmacyClick = () => {
     router.push({
-      pathname :'/SearchPharmacies',
-      query : { menuItemId : 2}
-    })
-  }
+      pathname: "/SearchPharmacies",
+      query: { menuItemId: 2 },
+    });
+  };
 
   return (
     <>
@@ -100,8 +100,33 @@ const NewPrescription = () => {
         isOpen={showModal}
         onOpen={openNewPresciptionModal}
         onClose={closeNewPresciptionModal}
+        width={"80%"}
+        height={"90%"}
+        top={"4%"}
       >
-        <AddPrescriptionItem />
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          alignItems="center"
+          marginTop={3}
+          justifyContent="space-between"
+        >
+          <Heading
+            fontFamily={"Poppins"}
+            fontWeight="semibold"
+            fontSize={"23px"}
+            color="#104076"
+          >
+            {AppConst.AddItem}
+          </Heading>
+          <FaTimes
+            color={"#104076"}
+            fontSize={20}
+            borderWidth={1}
+            onClick={closeNewPresciptionModal}
+          />
+        </Box>
+        <AddPrescriptionItem  closeNewPresciptionModal = {closeNewPresciptionModal} />
       </CustomModal>
       <Box display={"flex"} flexDirection="column">
         <Box
@@ -156,28 +181,28 @@ const NewPrescription = () => {
               </Box>
             </Box>
           )}
-          {
-            footerCards && <Box display={"flex"} flexDirection={"row"}>
-            <Box marginRight={6}>
-                  <SquareButton
-                    buttonTitle={AppConst.SearchPharmacy}
-                    showRightIcon={false}
-                    iconComponent={<AddIcon fontSize={"10px"} />}
-                    imageComponent={
-                      <Image
-                        src={"/search.png"}
-                        width={"16px"}
-                        objectFit="contain"
-                        alt=""
-                      />
-                    }
-                    backgroundColor="#50A2DB"
-                    buttonTextColor="#fff"
-                    onHandleClick={handleSearchPharmacyClick}
-                  />
-                </Box>
+          {footerCards && (
+            <Box display={"flex"} flexDirection={"row"}>
+              <Box marginRight={6}>
+                <SquareButton
+                  buttonTitle={AppConst.SearchPharmacy}
+                  showRightIcon={false}
+                  iconComponent={<AddIcon fontSize={"10px"} />}
+                  imageComponent={
+                    <Image
+                      src={"/search.png"}
+                      width={"16px"}
+                      objectFit="contain"
+                      alt=""
+                    />
+                  }
+                  backgroundColor="#50A2DB"
+                  buttonTextColor="#fff"
+                  onHandleClick={handleSearchPharmacyClick}
+                />
+              </Box>
             </Box>
-          }
+          )}
         </Box>
 
         <Box>

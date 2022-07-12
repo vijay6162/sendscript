@@ -1,42 +1,34 @@
-import dynamic from "next/dynamic";
-const PinInput = dynamic(() => import("react-pin-input"), { ssr: false });
+import React from "react";
+import { PinInput } from "react-input-pin-code";
 
 const OtpInput = () => {
-    return(
-        <>
-          {
-            typeof window !== "undefined" && <PinInput 
-                    length={4} 
-                    initialValue=""
-                    secret 
-                    onChange={(value, index) => {}} 
-                    type="numeric" 
-                    inputMode="number"
-                    inputStyle={styles.inputStyle}
-                    inputFocusStyle={styles.inputFocusStyle}
-                    onComplete={(value, index) => {}}
-                    autoSelect={true}
-                    regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
-                />
-          } 
-        </>
-        
-    )
-}
+  const [values, setValues] = React.useState([" ", " ", " ", " "]);
+
+  return (
+    <PinInput
+      values={values}
+      onChange={(value, index, values) => setValues(values)}
+      size={'lg'}
+      borderColor="#50A2DB"
+      focusBorderColor="#50A2DB"
+      validBorderColor={'#50A2DB'}
+      containerStyle={styles.containerStyle}
+      inputStyle={styles.inputStyle}
+    />
+  );
+};
 
 const styles = {
-   
-    inputStyle : {
-        borderColor : '#50A2DB',
-        backgroundColor : '#fff',
-        margin : 20,
-        borderWidth : 1,
-        borderRadius : 3
-    },
-    inputFocusStyle : {
-        borderColor : '#50A2DB',
-        borderWidth : 3
-    }
-}
+  containerStyle : {
+    margin: 20,
+  }, 
+  inputStyle: {
+    borderColor: "#50A2DB",
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 3,
+    margin : 10
+  }
+};
 
 export default OtpInput;

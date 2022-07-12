@@ -1,21 +1,21 @@
-import { Button } from "@chakra-ui/react";
+import { Button,Text } from "@chakra-ui/react";
 
 const CustomButton = (props) => {
-  const { onHandleClick, buttonTitle,fontWeight,fontSize,imageIcon,imageComponent } = props;
+  const { onHandleClick, buttonTitle,fontWeight,fontSize,imageIcon,imageComponent,width } = props;
   return (
     <Button
       backgroundColor={"#50A2DB"}
       color={"#fff"}
       size="md"
       fontFamily={"Poppins"}
-      width="28%"
+      width= {width ? width : "28%"}
       borderRadius={"55px"}
       onClick={onHandleClick}
-      fontWeight={fontWeight ? fontWeight : undefined}
-      fontSize={fontSize ? fontSize : undefined}
+      
+      
       _hover={{backgroundColor:'#50A2DB'}}
     >
-      &nbsp;{buttonTitle} &nbsp; {
+      &nbsp;<Text fontWeight={fontWeight ? fontWeight : undefined} fontSize={fontSize ? fontSize : undefined}>{buttonTitle}</Text> &nbsp; {
         imageIcon && imageComponent
       } 
     </Button>

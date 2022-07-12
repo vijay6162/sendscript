@@ -69,7 +69,32 @@ const AppConst = {
     ContactLastNameLabel : 'Contact last name',
     ConfirmPassword : 'Confirm password',
     YourClinicians : 'Your Clinicians',
-    AddClinicians : 'Add Clinicians'
+    AddClinicians : 'Add Clinicians',
+    ShareLink : "Share clinician registration link",
+    RegsiterClinic : "Register clinician now",
+    Address1Placeholder : 'Enter Address 1',
+    Address1label : 'Address Line 1',
+    Address2Placeholder : 'Enter Address 2',
+    Address2label : 'Address Line 2',
+    TownCityPlaceholder : 'Enter Town/City',
+    TownCityLabel : 'Town/City',
+    ClinicTelephoneNumberPlaceholder : 'Enter Clinic Telephone Number',
+    ClinicTelephoneNumberLabel : 'Clinic Telephone Number',
+    ClinicEmailAddressPlaceholder : 'Enter Clinic Email Address',
+    ClinicEmailAddressLabel : 'Clinic Email Address',
+    ChooseFile : 'Choose File',
+    ClinicWebsitePlaceHolder : 'Enter Clinic Website',
+    ClinicWebsiteLabel : 'Clinic Website',
+    CqcRegisterNumberPlaceholder : 'Enter CQC Register Number',
+    CqcRegisterNumberLabel : 'CQC Register Number',
+    RegisteredManagerNamePlaceHolder : 'Enter Registered Manager Name',
+    RegisteredManagerNameLabel : 'Registered Manager Name',
+    NominatedIndividualNamePlaceHolder : 'Enter Nominated Individual Name',
+    NominatedIndividualNameLabel : 'Nominated Individual Name',
+    NominatedIndividualEmailPlaceHolder : 'Enter Nominated Individual Email',
+    NominatedIndividualEmailLabel : 'Nominated Individual Email',
+    AreaType : 'Select Area of type/speciality',
+    Submit : 'Submit'
 
 }
 
