@@ -43,7 +43,7 @@ const PharmacyDetails = (props) => {
             }
             backgroundColor="#50A2DB"
             buttonTextColor="#fff"
-            width="25%"
+            width="27%"
             height="33px"
             onHandleClick={onClickSend}
           />
