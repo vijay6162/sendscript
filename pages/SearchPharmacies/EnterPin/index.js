@@ -42,7 +42,7 @@ const EnterPin = () => {
                 buttonTitle={AppConst.SendScript}
                 showRightIcon={false}
                 iconComponent={<AddIcon fontSize={"10px"} />}
-                imageComponent={<Image src={'/send_script_btn.png'} height={'20px'} width={'20px'} />}
+                imageComponent={<Image src={'/send_script_btn.png'} alt="image" height={'20px'} width={'20px'} />}
                 backgroundColor="#50A2DB"
                 buttonTextColor="#fff"
                 width="100%"

@@ -106,7 +106,7 @@ const Register = () => {
               </SimpleGrid>
               <SimpleGrid columns={1} spacing={10}>
                 <Box marginTop={7}>
-                  <CustomButton onHandleClick={handleRegisterSubmit}  buttonTitle={AppConst.Next}  imageIcon={true}  imageComponent={<Image src={'/next.png'}  width={'15px'}  />}/>
+                  <CustomButton onHandleClick={handleRegisterSubmit}  buttonTitle={AppConst.Next}  imageIcon={true}  imageComponent={<Image src={'/next.png'} alt="image"  width={'15px'}  />}/>
                 </Box>
              </SimpleGrid>
            </Box>

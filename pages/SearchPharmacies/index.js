@@ -4,7 +4,7 @@ import { hocLayout } from "../../app/components/hocLayout";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import  { useRouter } from "next/router";
 import SearchForm from "./SearchForm";
-import PharmacyItem from "./PharmacyItem";
+import PharmacyItem from "../../app/components/PharmacyItem";
 import PharmacyDetails from '../../app/components/PharmacyDetails';
 
 const data = [
@@ -216,8 +216,8 @@ const SearchPharmacy = () => {
 
               {data &&
                 data.map((item, index) => {
-                  return  <Box onClick={() => viewPharmacyDetails(item)}>
-                      <PharmacyItem key={index} item={item} />
+                  return  <Box key={index} onClick={() => viewPharmacyDetails(item)}>
+                      <PharmacyItem  item={item} />
                   </Box>
                   
                 })}

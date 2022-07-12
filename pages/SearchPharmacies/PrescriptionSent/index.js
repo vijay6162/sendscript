@@ -15,13 +15,13 @@ const PriscriptionSent = () => {
         alignItems={"center"}
         marginTop = {'15%'}
       >
-        <Image src="/send_script.png" width={"80px"} />
+        <Image src="/send_script.png" alt="image" width={"80px"} />
         <Box display="flex" flexDirection={"row"} margin={3}>
           <Text fontFamily={"Poppins"} fontSize={14} color="#104076">
             Prescription has been send to{" "}
           </Text>
           <Text fontFamily={"Poppins"} fontSize={14} color="#50A2DB">
-            &nbsp; "London Elite Pharmacy"
+            &nbsp; &ldquo;London Elite Pharmacy&ldquo;
           </Text>
         </Box>
         <Box margin={3}>

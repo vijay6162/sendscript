@@ -92,7 +92,7 @@ const ClinicProfileCard = () => {
       marginTop={2}
     >
       <Box display="flex" flexDirection={"row"}>
-        <Image src={"/avatar.png"} width={"80px"} objectFit="contain" />
+        <Image src={"/avatar.png"} alt="image" width={"80px"} objectFit="contain" />
         <Box margin={4}>
           <Text
             fontFamily={"Poppins"}
@@ -318,6 +318,7 @@ const Dashboard = () => {
                 src={"/dashboard_logo.png"}
                 height={170}
                 objectFit={"contain"}
+                alt="image"
                 margin={0}
               />
             </Center>

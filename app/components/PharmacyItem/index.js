@@ -82,10 +82,11 @@ const PharmacyItem = (props) => {
     <Box display="flex" flexDirection={"row"} marginTop={3}>
       <Box marginRight={3}>
         <Image
-          src={item.image}
+          src={item?.image}
           height="130px"
           width="130px"
           borderRadius={10}
+          alt="image"
           
         />
       </Box>

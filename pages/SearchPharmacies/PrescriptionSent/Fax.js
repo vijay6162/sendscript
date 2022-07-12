@@ -15,13 +15,13 @@ const PriscriptionSent = () => {
         alignItems={"center"}
         marginTop = {'15%'}
       >
-        <Image src="/fax.png" width="100px" height={'100px'} />
+        <Image src="/fax.png" alt="image" width="100px" height={'100px'} />
         <Box display="flex" flexDirection={"row"} margin={3}>
           <Text fontFamily={"Poppins"} fontSize={14} color="#104076">
             Prescription has been send by fax
           </Text>
           <Text fontFamily={"Poppins"} fontSize={14} color="#50A2DB">
-            &nbsp; "Please contact to confirm acceptance"
+            &nbsp; &ldquo;Please contact to confirm acceptance&ldquo;
           </Text>
         </Box>
         <Box margin={3}>

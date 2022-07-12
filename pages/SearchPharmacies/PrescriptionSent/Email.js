@@ -18,7 +18,7 @@ const EnterEmail = () => {
         marginTop={"10%"}
       >
         <Box width={120} height={120} borderRadius={120/2} backgroundColor="#e6eff4" >
-            <Image src="/check.png" width={"50px"} marginTop={'50%'} marginLeft={'30%'}/>
+            <Image src="/check.png" alt="image" width={"50px"} marginTop={'50%'} marginLeft={'30%'}/>
         </Box>
         <Box marginTop={5}>
           <Text
@@ -45,7 +45,7 @@ const EnterEmail = () => {
             Email Id :
           </Text>
           <Text fontFamily={"Poppins"} fontSize={14} color="#50A2DB">
-            &nbsp; "user@sendscript.com"
+            &nbsp; &ldquo;user@sendscript.com&ldquo;
           </Text>
         </Box>
 

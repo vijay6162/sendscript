@@ -1,6 +1,5 @@
 import SquareButton from "../../../app/components/SquareButton";
 import { Box, Heading, Image, Text, SimpleGrid, Input } from "@chakra-ui/react";
-import styles from "./styles";
 import AppConst from "../../../app/constants/AppConstants";
 import { AddIcon } from "@chakra-ui/icons";
 

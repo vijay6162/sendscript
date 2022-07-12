@@ -1,7 +1,7 @@
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import SquareButton from "../SquareButton";
 import AppConst from "../../constants/AppConstants";
-import { StarRating } from "../../../pages/SearchPharmacies/PharmacyItem";
+import { StarRating } from "../PharmacyItem";
 import {
   FaStar,
   FaCircle,
