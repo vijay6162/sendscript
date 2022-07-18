@@ -1,15 +1,6 @@
 import {
-  Box,
-  Text,
-  Input,
-  InputRightElement,
-  InputGroup,
-  Switch,
-  FormControl,
+  Box
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import AppConst from "../../../../app/constants/AppConstants";
-
 import CustomTable from "../../../../app/components/Table";
 const tableHeadData = [
   "Date of Prescription",

@@ -6,40 +6,44 @@ import SideBarFooter from './SidebarFooter';
 import { MenuConstants } from "../../constants/AppConstants";
 const { Dashboard, Patient, Medicine, Pharmacist } = MenuConstants;
 import { useRouter } from "next/router";
-const defaultMenuList = [
-  {
-    id: 1,
-    title: Dashboard,
-    image: "/amenu1.png",
-    isActive: true,
-    link: "/dashboard",
-  },
-  {
-    id: 2,
-    title: Patient,
-    image: "/inmenu2.png",
-    isActive: false,
-    link: "/patients/SearchPatients",
-  },
-  {
-    id: 3,
-    title: Medicine,
-    image: "/inmenu3.png",
-    isActive: false,
-    link: "",
-  },
-  {
-    id: 4,
-    title: Pharmacist,
-    image: "/inmenu4.png",
-    isActive: false,
-    link: "",
-  },
-];
+
 
 const SideBar = () => {
 
   const router = useRouter();
+
+  const pathName = router.pathname;
+
+  const defaultMenuList = [
+    {
+      id: 1,
+      title: Dashboard,
+      image: "/amenu1.png",
+      isActive: true,
+      link: "/dashboard",
+    },
+    {
+      id: 2,
+      title: Patient,
+      image: "/inmenu2.png",
+      isActive: false,
+      link: "/patients/SearchPatients",
+    },
+    {
+      id: 3,
+      title: Medicine,
+      image: "/inmenu3.png",
+      isActive: false,
+      link: "",
+    },
+    {
+      id: 4,
+      title: Pharmacist,
+      image: "/inmenu4.png",
+      isActive: false,
+      link: "",
+    },
+  ];
 
   const [menuList,setMenuList] = useState(defaultMenuList);
 

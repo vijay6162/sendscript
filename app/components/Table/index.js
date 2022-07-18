@@ -1,5 +1,4 @@
-
-import  React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Table,
   Thead,
@@ -23,9 +22,7 @@ import { FaFilter, FaTrash } from "react-icons/fa";
 import SquareButton from "../SquareButton";
 import { AddIcon } from "@chakra-ui/icons";
 
-
 const CustomTable = (props) => {
-
   const getStatusBadge = (status) => {
     if (status == "Cancelled") {
       return (
@@ -107,7 +104,6 @@ const CustomTable = (props) => {
       borderWidth={"1px"}
       opacity={4}
     >
-     
       {props.headerType == "search" && (
         <Box
           display={"flex"}
@@ -170,7 +166,7 @@ const CustomTable = (props) => {
                 >
                   Filter
                 </Text>
-                <Switch id="email-alerts" marginLeft={2}  />
+                <Switch id="email-alerts" marginLeft={2} />
               </FormControl>
             </Box>
           </Box>
@@ -212,7 +208,7 @@ const CustomTable = (props) => {
               showRightIcon={true}
               iconComponent={<AddIcon fontSize={"13px"} />}
               backgroundColor="#fff"
-              buttonTextColor="#50A2DB" 
+              buttonTextColor="#50A2DB"
               onHandleClick={props.handleOpenNewPresciptionModal}
             />
           </Box>
@@ -326,7 +322,6 @@ const CustomTable = (props) => {
                   </Tr>
                 )}
 
-
                 {props.from == "clinicDashboard" && (
                   <Tr key={index}>
                     <Td
@@ -387,7 +382,6 @@ const CustomTable = (props) => {
                           objectFit="contain"
                           margin={2}
                         />
-                       
                       </Box>
                     </Td>
                   </Tr>
@@ -402,7 +396,7 @@ const CustomTable = (props) => {
                         fontSize={"13px"}
                         textAlign={"center"}
                       >
-                        {index+1}
+                        {index + 1}
                       </Td>
                       <Td
                         color="#6C6C6F"
@@ -458,7 +452,7 @@ const CustomTable = (props) => {
                           display={"flex"}
                           flexDirection={"row"}
                           justifyContent="space-evenly"
-                          alignItems={'center'}
+                          alignItems={"center"}
                         >
                           <Image
                             src="/action2.png"
@@ -466,8 +460,7 @@ const CustomTable = (props) => {
                             objectFit="contain"
                             margin={2}
                           />
-                          <FaTrash  color="#104076" fontSize={12}/>
-                          
+                          <FaTrash color="#104076" fontSize={12} />
                         </Box>
                       </Td>
                     </Tr>
@@ -494,7 +487,6 @@ const CustomTable = (props) => {
                         </Text>
                       </Td>
                     </Tr>
-                  
                   </>
                 )}
 
@@ -569,6 +561,276 @@ const CustomTable = (props) => {
                     </Tr>
                     <Tr>
                       <Td colSpan={6}>
+                        <TableContainer>
+                          <Table variant={"unstyled"}>
+                            <Thead backgroundColor={"#F8F8F8"}>
+                              <Tr>
+                                <Td
+                                  color={"#104076"}
+                                  fontSize={"13px"}
+                                  fontFamily="Poppins"
+                                  textAlign={"center"}
+                                  paddingTop={"4px"}
+                                  paddingBottom={"4px"}
+                                  fontWeight="semibold"
+                                >
+                                  S.no
+                                </Td>
+                                <Td
+                                  color={"#104076"}
+                                  fontSize={"13px"}
+                                  fontFamily="Poppins"
+                                  textAlign={"center"}
+                                  paddingTop={"4px"}
+                                  paddingBottom={"4px"}
+                                  fontWeight="semibold"
+                                >
+                                  Medicine Name
+                                </Td>
+                                <Td
+                                  color={"#104076"}
+                                  fontSize={"13px"}
+                                  fontFamily="Poppins"
+                                  textAlign={"center"}
+                                  paddingTop={"4px"}
+                                  paddingBottom={"4px"}
+                                  fontWeight="semibold"
+                                >
+                                  Dosage
+                                </Td>
+                                <Td
+                                  color={"#104076"}
+                                  fontSize={"13px"}
+                                  fontFamily="Poppins"
+                                  textAlign={"center"}
+                                  paddingTop={"4px"}
+                                  paddingBottom={"4px"}
+                                  fontWeight="semibold"
+                                >
+                                  Daily Dosage
+                                </Td>
+                                <Td
+                                  color={"#104076"}
+                                  fontSize={"13px"}
+                                  fontFamily="Poppins"
+                                  textAlign={"center"}
+                                  paddingTop={"4px"}
+                                  paddingBottom={"4px"}
+                                  fontWeight="semibold"
+                                >
+                                  Duration
+                                </Td>
+                              </Tr>
+                            </Thead>
+                            <Tbody>
+                              {item.medicineData.map((item1, index) => {
+                                return (
+                                  <Tr key={`${item1.id}${index}`}>
+                                    <Td
+                                      color="#6C6C6F"
+                                      fontFamily={"Poppins"}
+                                      fontSize={"13px"}
+                                      textAlign={"center"}
+                                    >
+                                      {index + 1}
+                                    </Td>
+                                    <Td
+                                      color="#6C6C6F"
+                                      fontFamily={"Poppins"}
+                                      fontSize={"13px"}
+                                      textAlign={"center"}
+                                    >
+                                      {item1.medicineName}
+                                    </Td>
+                                    <Td
+                                      color="#6C6C6F"
+                                      fontFamily={"Poppins"}
+                                      fontSize={"13px"}
+                                      textAlign={"center"}
+                                    >
+                                      {item1.dosage}
+                                    </Td>
+                                    <Td
+                                      color="#6C6C6F"
+                                      fontFamily={"Poppins"}
+                                      fontSize={"13px"}
+                                      textAlign={"center"}
+                                    >
+                                      {item1.DailyDosage}
+                                    </Td>
+                                    <Td
+                                      color="#6C6C6F"
+                                      fontFamily={"Poppins"}
+                                      fontSize={"13px"}
+                                      textAlign={"center"}
+                                    >
+                                      {item1.Duration}
+                                    </Td>
+                                  </Tr>
+                                );
+                              })}
+                            </Tbody>
+                          </Table>
+                        </TableContainer>
+                      </Td>
+                    </Tr>
+                  </>
+                )}
+
+                {props.from == "pharmacy_dashboard" && (
+                  <>
+                    <Tr key={index}>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.DateofPrescription}
+                      </Td>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.PatientName}
+                      </Td>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.DateOfBirth}
+                      </Td>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.ContactNo}
+                      </Td>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.DoctorName}
+                      </Td>
+
+                      <Td>
+                        {index % 2 == 0 && (
+                          <Box
+                            display={"flex"}
+                            flexDirection={"row"}
+                            justifyContent={"space-around"}
+                          >
+                            <Badge backgroundColor="#28A745">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                Dispense
+                              </Text>
+                            </Badge>
+                            <Badge backgroundColor="#DC3545">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                Cancel&nbsp;
+                              </Text>
+                            </Badge>
+                            <Badge backgroundColor="#343A40">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                &nbsp; &nbsp;Print&nbsp;&nbsp;
+                              </Text>
+                            </Badge>
+                          </Box>
+                        )}
+
+                        {index % 2 != 0 && (
+                          <Box
+                            display={"flex"}
+                            flexDirection={"row"}
+                            justifyContent={"space-around"}
+                          >
+                            <Badge backgroundColor="#28A745">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                Accept
+                              </Text>
+                            </Badge>
+                            <Badge backgroundColor="#DC3545">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                Reject&nbsp;
+                              </Text>
+                            </Badge>
+                            <Badge backgroundColor="#343A40">
+                              <Text
+                                color="#ffffff"
+                                fontFamily={"Poppins"}
+                                fontWeight="light"
+                                fontSize={"11px"}
+                                textTransform="none"
+                              >
+                                &nbsp; &nbsp;Print&nbsp;&nbsp;
+                              </Text>
+                            </Badge>
+                          </Box>
+                        )}
+                      </Td>
+                      <Td
+                        color="#6C6C6F"
+                        fontFamily={"Poppins"}
+                        fontSize={"14px"}
+                        textAlign={"center"}
+                      >
+                        {item.Status}
+                      </Td>
+                    </Tr>
+                    <Tr>
+                      <Td colSpan={5} paddingTop={1}>
+                        <Text
+                          fontFamily={"Poppins"}
+                          fontWeight={"Regular"}
+                          fontSize={14}
+                          color={"#104076"}
+                          marginLeft={7}
+                        >
+                          Address : Elite Health, 69 Harley St, London W1G 8QW,
+                          United Kingdom
+                        </Text>
+                      </Td>
+                    </Tr>
+                    <Tr>
+                      <Td colSpan={7}>
                         <TableContainer>
                           <Table variant={"unstyled"}>
                             <Thead backgroundColor={"#F8F8F8"}>

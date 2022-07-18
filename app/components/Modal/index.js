@@ -31,7 +31,7 @@ const commonModal = (props) => {
             marginLeft:'auto',
             marginRight:'auto',
             backgroundColor: '#fff',
-            overflow: 'hidden',
+            
             WebkitOverflowScrolling: 'touch',
             borderRadius: '30px',
              padding: '20px',

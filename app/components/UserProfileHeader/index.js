@@ -1,12 +1,12 @@
 import { Box, Image,Text } from "@chakra-ui/react";
-const UserProfileHeader = () => {
+const UserProfileHeader = (props) => {
   return (
     <>
-      <Image src="./profile_banner.png" />
+      <Image src={props.type == 'pharmacy' ? "../pharmacy_bg.png": "../profile_banner.png"} />
       <Box position={"absolute"} top={'12%'} left={'12%'}>
         <Box borderRadius={170/2} backgroundColor={"#fff"} padding={4} width={'22%'}>
             <Box>
-                <Image src="./avatar.png" width={'130px'} />   
+                <Image src="../avatar.png" width={'130px'} />   
                 
             </Box>
         </Box>

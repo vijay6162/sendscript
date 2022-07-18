@@ -202,9 +202,9 @@ const Register = () => {
 
               <SimpleGrid columns={1} marginTop="6">
                 <Checkbox size="lg" defaultChecked>
-                  {AppConst.ConsentText}
+                  <Text color="#62ACDF" fontFamily="Poppins">{AppConst.ConsentText}</Text>
                 </Checkbox>
-                <Text fontSize={13} fontFamily="Poppins" marginTop={2}>
+                <Text fontSize={13} color="#104076" fontFamily="Poppins" marginTop={2}>
                   {AppConst.ConsentSubText}
                 </Text>
               </SimpleGrid>
