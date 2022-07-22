@@ -1,53 +1,22 @@
-import {
-  Box
-} from "@chakra-ui/react";
-import Modal from 'react-modal';
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import Styles from "../../../styles/modal.module.css"; 
 
 
-
-import AppConst from "../../constants/AppConstants";
 const commonModal = (props) => {
-  const { isOpen, onOpen, onClose,width,height,top } = props;
+  const { isOpen, onClose } = props;
   return (
-    <Box>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onClose}
-        style={{
-          overlay: {
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(125, 124, 125, 0.7)',
-            zIndex : 999999
-          },
-          content: {
-            position:'absolute',
-            top : top,
-            left:0,
-            right:0,
-            marginLeft:'auto',
-            marginRight:'auto',
-            backgroundColor: '#fff',
-            
-            WebkitOverflowScrolling: 'touch',
-            borderRadius: '30px',
-             padding: '20px',
-            width :width,
-            height : height
-            
-          }
-        }}
-        contentLabel="Example Modal"
-      >
-
+    <Modal
+      open={isOpen}
+      onClose={onClose}
+      center={true}
+      classNames={{
+        modal: Styles.customModal,
+      }}
+    >
       {props.children}
-      </Modal>
-    </Box>
+    </Modal>
   );
 };
-
 
 export default commonModal;

@@ -100,9 +100,7 @@ const NewPrescription = () => {
         isOpen={showModal}
         onOpen={openNewPresciptionModal}
         onClose={closeNewPresciptionModal}
-        width={"80%"}
-        height={"90%"}
-        top={"4%"}
+        
       >
         <Box
           display={"flex"}
@@ -119,12 +117,7 @@ const NewPrescription = () => {
           >
             {AppConst.AddItem}
           </Heading>
-          <FaTimes
-            color={"#104076"}
-            fontSize={20}
-            borderWidth={1}
-            onClick={closeNewPresciptionModal}
-          />
+        
         </Box>
         <AddPrescriptionItem  closeNewPresciptionModal = {closeNewPresciptionModal} />
       </CustomModal>

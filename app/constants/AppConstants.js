@@ -109,7 +109,8 @@ const AppConst = {
   AddressPlaceholder: "Enter Address",
   Addresslabel: "Address",
   AddPharmacist: "Add Pharmacist",
-  SearchPharmacist : 'Search Pharmacist'
+  SearchPharmacist : 'Search Pharmacist',
+  PharmacyDashboardHeading : 'Elite Pharmacy'
 };
 
 export const MenuConstants = {

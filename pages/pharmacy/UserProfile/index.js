@@ -56,7 +56,7 @@ const UserProfile = () => {
             fontSize={14}
             color={"#104076"}
             fontWeight={"semibold"}
-            width={"90%"}
+            width={"95%"}
           >
             Pharmacy Details
           </Text>
@@ -64,23 +64,24 @@ const UserProfile = () => {
             borderWidth={1}
             borderColor={"#104076"}
             borderRadius={10}
-            width={"10%"}
+            width={'5%'}
           >
             <Box
               display={"flex"}
               flexDirection={"row"}
-              justifyContent={"center"}
+              justifyContent={"space-evenly"}
               alignItems={"center"}
+              padding={1}
             >
-              <FaPen color={"#104076"} fontSize={8} />
+              <FaPen color={"#104076"} fontSize={8}  />
               <Text
                 fontFamily={"Poppins"}
                 fontSize={10}
                 color={"#104076"}
-                fontWeight={"semibold"}
-                padding={1}
+                fontWeight={"medium"}
+               
               >
-                Edit
+               Edit
               </Text>
             </Box>
           </Box>
@@ -279,48 +280,39 @@ const UserProfile = () => {
   const patients = [
     {
       id: 1,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 2,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 3,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 4,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 5,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 6,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 7,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 8,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
     {
       id: 9,
-      name: "Ben Alloy",
-      dob: "(21 Aug 1987)",
+      name: "GPHC NUMBER",
     },
   ];
 
@@ -346,32 +338,20 @@ const UserProfile = () => {
         onClick={handleSelectPatient}
       >
         <Box display={"flex"} flexDirection={"row"}>
-          <Image
-            src="/menu8.png"
-            height={35}
-            width={35}
-            objectFit="contain"
-            alt=""
-          />
+         
           <Text
             fontFamily={"Poppins"}
-            fontSize={"13px"}
+            fontSize={"12px"}
             color="#104076"
             float={"left"}
-            marginLeft={4}
+            
             marginTop={2}
             fontWeight={"Regular"}
           >
-            {`${name} ${dob}`}
+            {`${name}`}
           </Text>
         </Box>
-        <Image
-          src="/enter.png"
-          height={"12px"}
-          width={"12px"}
-          objectFit="contain"
-          alt=""
-        />
+       
       </Box>
     );
   };
@@ -429,12 +409,7 @@ const UserProfile = () => {
               >
                 {AppConst.SearchPharmacist}
               </Heading>
-              <FaTimes
-                color={"#104076"}
-                fontSize={20}
-                borderWidth={1}
-                onClick={closeSearchModal}
-              />
+             
             </Box>
             <Box
               display={"flex"}
@@ -491,14 +466,9 @@ const UserProfile = () => {
                 fontSize={"23px"}
                 color="#104076"
               >
-                {AppConst.SearchPharmacist}
+                {AppConst.AddPharmacist}
               </Heading>
-              <FaTimes
-                color={"#104076"}
-                fontSize={20}
-                borderWidth={1}
-                onClick={closeSearchModal}
-              />
+             
             </Box>
 
             <Box

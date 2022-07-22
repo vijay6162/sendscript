@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Image } from "@chakra-ui/react";
 import SideBar from "../../components/Sidebar";
 import Header from "../../components/Header";
-export function hocLayout(WrappedComponent, headerStatus = true) {
+export function hocLayout(WrappedComponent, headerStatus = true,userType) {
   return () => {
     return (
       <>
@@ -26,7 +26,7 @@ export function hocLayout(WrappedComponent, headerStatus = true) {
             padding={headerStatus ? 8 : 0}
             width="100%"
           >
-            {headerStatus && <Header />}
+            {headerStatus && <Header userType={userType} />}
             <Box>
               <WrappedComponent />
             </Box>

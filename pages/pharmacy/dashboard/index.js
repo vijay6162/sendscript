@@ -230,6 +230,6 @@ const Dashboard = () => {
   );
 };
 
-const DashboardHoc = hocLayout(Dashboard);
+const DashboardHoc = hocLayout(Dashboard,true,'pharmacy');
 
 export default DashboardHoc;

@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { BellIcon } from "@chakra-ui/icons";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Box
       display={"flex"}
@@ -19,7 +19,7 @@ const Header = () => {
           marginLeft="2"
           float={"left"}
         >
-           Govind Bankani
+          {props.userType === 'pharmacy' ? 'Elite Pharmacy' : 'Govind Bankani'} 
         </Text>
       </Box>
       <Box>
