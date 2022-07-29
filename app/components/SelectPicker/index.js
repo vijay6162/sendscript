@@ -10,12 +10,24 @@ const SelectPicker = (props) => {
         placeholder={props.placeHolder}
         style={Styles.SelectPickerStyles}
         size={"md"}
-        
+        value={props.value}
+        onChange={props.handleOnchangeValue}
+        id={props.id}
       >
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
+        <option value="">Select {props.label}</option>
+        {
+          props.options.map((item) => {
+            return(
+              <option value={item.title} key={`${item.title}${item.id}`}>{item.title}</option>
+            )
+          })
+        }
       </Select>
+      {
+        props.errorText &&  <Text fontSize={"12px"} color={"red"} fontFamily={"Poppins"} marginLeft={2}>
+          {props.errorText}
+        </Text>
+      }
     </Box>
   );
 };

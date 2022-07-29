@@ -1,8 +1,4 @@
-import {
-  FormControl,
-  FormLabel,
-  Input
-} from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, Text } from "@chakra-ui/react";
 import Styles from "./TextInput.module.css";
 
 const TextInput = (props) => {
@@ -22,10 +18,22 @@ const TextInput = (props) => {
         placeholder={props.placeHolder}
         className={Styles.input}
         size="md"
-        backgroundColor={props.backgroundColor?props.backgroundColor:undefined}
+        value={props.value}
+        backgroundColor={
+          props.backgroundColor ? props.backgroundColor : undefined
+        }
+        onChange={props.handleOnchangeValue}
       />
+      {
+        props.errorText &&  <Text fontSize={"12px"} color={"red"} fontFamily={"Poppins"} marginLeft={2}>
+          {props.errorText}
+        </Text>
+      }
+      
     </FormControl>
   );
 };
+
+// props.handleOnchangeValue
 
 export default TextInput;
