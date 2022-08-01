@@ -2,9 +2,11 @@ import React, { useLayoutEffect, useState } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
 import RestrictMobileVersion from "../app/components/RestrictMobileVersion";
-
+import { Provider } from "react-redux";
+import store from '../app/redux/store';
 
 function MyApp({ Component, pageProps }) {
+  
   const [showMobileWarning, setshowMobileWarning] = useState(false);
 
   useLayoutEffect(() => {
@@ -15,22 +17,24 @@ function MyApp({ Component, pageProps }) {
         setshowMobileWarning(false);
       }
     }
-    window.addEventListener("resize", checkLayout); 
-    if(typeof window !== "undefined"){
+    window.addEventListener("resize", checkLayout);
+    if (typeof window !== "undefined") {
       checkLayout();
     }
-    
+
     return () => window.removeEventListener("resize", checkLayout);
   }, []);
 
   return (
-    <ChakraProvider>
-      {!showMobileWarning ? (
-        <Component {...pageProps} />
-      ) : (
-        <RestrictMobileVersion />
-      )}
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider>
+        {!showMobileWarning ? (
+          <Component {...pageProps} />
+        ) : (
+          <RestrictMobileVersion />
+        )}
+      </ChakraProvider>
+    </Provider>
   );
 }
 

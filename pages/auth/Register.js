@@ -14,15 +14,23 @@ import TextInput from "../../app/components/TextInput";
 import CustomButton from "../../app/components/Button";
 import AppConst from "../../app/constants/AppConstants";
 import { useRouter } from "next/router";
-import { apiCall } from "../../app/utils/apiCall";
-import { ApiConstants } from "../../app/constants/ApiConstants";
 import { Formik } from "formik";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Yup from "yup";
 import AppLoader from "../../app/components/Loader";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  requestRegisterUser,
+  responseRegisterUser,
+  registerSelector,
+} from "../../app/redux/slicers/RegisterSlicer";
+import {
+  requestToDoList,
+  toDoSelector
+} from "../../app/redux/slicers/ToDoSlicer";
+import { FETCH_TODO_LIST } from '../../app/redux/sagas/ToDoSaga/actions'
 
 const registerSchema = Yup.object().shape({
   userTitle: Yup.string().required("Please select an option"),
@@ -99,38 +107,36 @@ const userTitleList = [
 ];
 
 const Register = () => {
+
   const router = useRouter();
-  const [registerLoader, setregisterLoader] = useState(false);
+  const dispatch = useDispatch();
+  const { registerLoader, registerResponse, registerError } =
+    useSelector(registerSelector);
+
+  const {todoresponse,todoloading} = useSelector(toDoSelector);
+
+  console.log(todoresponse)
   
   const handleRegisterSubmit = async (postData) => {
-    setregisterLoader(true)
-    console.log(postData)
-    
+    dispatch(requestRegisterUser(postData));
     setTimeout(() => {
-      setregisterLoader(false);
-      router.push("/auth/Login");
-    },2000)
-   
-   
-    // const apiResponse = await apiCall(ApiConstants.doctorRegistration, postData);
-    // if(apiResponse.status  === 200){
-    //     swal("Good job!", "Registration success.Please verify your email", "success");
-    //     setTimeout(() => {
-    //       router.push("/auth/Login");
-    //     },1000)
-    // }else{
-    //   swal("Attention", "Registration failed.Please try again later", "warning");
-    // }
-    
+      responseRegisterUser(postData)
+    },3000)
   };
 
 
+  const onClickButton = () => {
+    dispatch(requestToDoList())
+    dispatch({type : FETCH_TODO_LIST});
+  }
+
   const onCaptchaChange = (value) => {
     console.log("Captcha value:", value);
-  }
+  };
 
   return (
     <Flex direction={"row"}>
+      <button onClick={onClickButton}>Click</button>
       <Box style={Styles.ImageBox}>
         <Image
           src="/register-right-bg.png"
@@ -141,7 +147,7 @@ const Register = () => {
       </Box>
 
       <Box style={Styles.RegisterFormBox} maxHeight="100vh" overflow={"scroll"}>
-        <AppLoader loading={registerLoader} />
+        <AppLoader loading={registerLoader || todoloading} />
         <Box>
           <Box marginLeft="10%" marginTop="4%">
             <Heading
@@ -171,13 +177,13 @@ const Register = () => {
                 postalCode: "",
                 countryName: "",
                 isUserAgreeConsent: false,
-                userProfile:"D",
-                password : '123456'
+                userProfile: "D",
+                password: "123456",
               }}
               validationSchema={registerSchema}
               onSubmit={(values, { setSubmitting }) => {
-                 handleRegisterSubmit(values)
-                 setSubmitting(false)
+                handleRegisterSubmit(values);
+                setSubmitting(false);
               }}
             >
               {({
