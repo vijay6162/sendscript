@@ -4,7 +4,7 @@ import { hocLayout } from "../../../app/components/hocLayout";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import SquareButton from "../../../app/components/SquareButton";
 import { AddIcon } from "@chakra-ui/icons";
-import OtpInput from '../../../app/components/OtpInput';
+// import OtpInput from '../../../app/components/OtpInput';
 import { useRouter } from "next/router";
 
 const EnterPin = () => {
@@ -35,7 +35,7 @@ const EnterPin = () => {
           </Text>
         </Box>
         <Box marginTop={2}>
-          <OtpInput />
+          {/* <OtpInput /> */}
         </Box>
         <Box marginTop={3}>
             <SquareButton

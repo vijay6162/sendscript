@@ -15,8 +15,7 @@ const SelectPicker = (props) => {
         id={props.id}
       >
         <option value="">Select {props.label}</option>
-        {
-          props.options.map((item) => {
+        {props && props?.options?.length && props?.options?.map((item) => {
             return(
               <option value={item.title} key={`${item.title}${item.id}`}>{item.title}</option>
             )
